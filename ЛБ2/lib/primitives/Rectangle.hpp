@@ -24,7 +24,7 @@ namespace kondraLib
             Center,
             NorthWest,
             NorthEast,
-            SouthWest,
+            SouthWest, // default
             SouthEast,
         };
 
@@ -68,12 +68,12 @@ namespace kondraLib
 
         case BasePoints::NorthWest:
             offsetX = 0.0f;
-            offsetY = _height; // Change to _height
+            offsetY = -_height;
             break;
 
         case BasePoints::NorthEast:
             offsetX = -_width;
-            offsetY = _height; // Change to _height
+            offsetY = -_height;
             break;
 
         case BasePoints::SouthWest:
@@ -87,14 +87,14 @@ namespace kondraLib
             break;
         }
 
-        _x += offsetX;
-        _y += offsetY;
+        auto x = _x + offsetX;
+        auto y = _y + offsetY;
 
         // Update the vertices
-        _vertices[0] = {_x, _y};
-        _vertices[1] = {_x + _width, _y};
-        _vertices[2] = {_x + _width, _y + _height};
-        _vertices[3] = {_x, _y + _height};
+        _vertices[0] = {x, y};
+        _vertices[1] = {x + _width, y};
+        _vertices[2] = {x + _width, y + _height};
+        _vertices[3] = {x, y + _height};
     }
 
 }

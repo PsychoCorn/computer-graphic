@@ -32,6 +32,7 @@ namespace kondraLib
         void setLabelColor(const Color &);
         void setLabelColor(const GLfloat &, const GLfloat &, const GLfloat &, const GLfloat & = 1.f);
         void draw() const override;
+        void baseTo(const BasePoints &);
     };
 
     Button::Button(const GLfloat &x, const GLfloat &y, const GLfloat &width, const GLfloat &height) : 
@@ -91,6 +92,13 @@ namespace kondraLib
         {
             glutBitmapCharacter(GLUT_BITMAP_8_BY_13, c); // Render each character of the label
         }
+    }
+
+    void Button::baseTo(const Rectangle::BasePoints &basePosition)
+    {
+        Rectangle::baseTo(basePosition);
+        _labelX = _vertices[0].first + (_width - _labelWidth) / 2;
+        _labelY = _vertices[0].second + (_height + _labelHeight) / 3;
     }
 
 }

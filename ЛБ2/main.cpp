@@ -54,7 +54,7 @@ int main(int argc, char** argv)
     glutInitWindowSize(winWidth, winHeight);
     glutCreateWindow("Button Example");
 
-    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glClearColor(0.f, 0.f, 0.f, 0.f);
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
