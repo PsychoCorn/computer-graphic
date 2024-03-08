@@ -19,9 +19,19 @@ namespace kondraLib
         std::array<std::pair<GLfloat, GLfloat>, 4> _vertices;
 
     public:
+        enum class BasePoints
+        {
+            Center,
+            NorthWest,
+            NorthEast,
+            SouthWest,
+            SouthEast,
+        };
+
         Rectangle(const GLfloat &, const GLfloat &, const GLfloat &, const GLfloat &, const Color & = Color::BLACK);
         ~Rectangle() = default;
         void draw() const override;
+        void baseTo(const BasePoints &);
     };
 
     Rectangle::Rectangle(const GLfloat &x, const GLfloat &y, const GLfloat &width,
@@ -43,6 +53,48 @@ namespace kondraLib
             glVertex2f(x, y);
         }
         glEnd();
+    }
+
+    void Rectangle::baseTo(const Rectangle::BasePoints &basePosition)
+    {
+        GLfloat offsetX, offsetY;
+
+        switch (basePosition)
+        {
+        case BasePoints::Center:
+            offsetX = -_width / 2.0f;
+            offsetY = -_height / 2.0f;
+            break;
+
+        case BasePoints::NorthWest:
+            offsetX = 0.0f;
+            offsetY = _height; // Change to _height
+            break;
+
+        case BasePoints::NorthEast:
+            offsetX = -_width;
+            offsetY = _height; // Change to _height
+            break;
+
+        case BasePoints::SouthWest:
+            offsetX = 0.0f;
+            offsetY = 0.0f;
+            break;
+
+        case BasePoints::SouthEast:
+            offsetX = -_width;
+            offsetY = 0.0f;
+            break;
+        }
+
+        _x += offsetX;
+        _y += offsetY;
+
+        // Update the vertices
+        _vertices[0] = {_x, _y};
+        _vertices[1] = {_x + _width, _y};
+        _vertices[2] = {_x + _width, _y + _height};
+        _vertices[3] = {_x, _y + _height};
     }
 
 }

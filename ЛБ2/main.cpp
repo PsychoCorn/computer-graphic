@@ -1,6 +1,9 @@
 #include "lib/interface/buttons/Button.hpp"
 #include <iostream>
 
+const GLuint winWidth = 400;
+const GLuint winHeight = 400;
+
 class TestListener : public kondraLib::Listener
 {
 private:
@@ -48,14 +51,14 @@ int main(int argc, char** argv)
 
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
-    glutInitWindowSize(400, 400);
+    glutInitWindowSize(winWidth, winHeight);
     glutCreateWindow("Button Example");
 
     glClearColor(0.0, 0.0, 0.0, 0.0);
 
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(0, 400, 0, 400, -1, 1);
+    glOrtho(0, winWidth, 0, winHeight, -1, 1);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 

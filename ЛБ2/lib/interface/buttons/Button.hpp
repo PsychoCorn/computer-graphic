@@ -13,6 +13,10 @@ namespace kondraLib
     {
     private:
         std::string _label = "";
+        GLfloat _labelWidth;
+        GLfloat _labelHeight;
+        GLfloat _labelX;
+        GLfloat _labelY;
         Color _labelColor = Color::BLACK;
         std::unique_ptr<Listener> _listener = nullptr;
 
@@ -40,7 +44,8 @@ namespace kondraLib
 
     bool Button::isMouseOver(const GLfloat &mouseX, const GLfloat &mouseY) const
     {
-        return mouseX >= _x && mouseX <= _x + _width && mouseY >= _y && mouseY <= _y + _height;
+        return mouseX >= _vertices[0].first && mouseX <= _vertices[2].first && 
+               mouseY >= _vertices[0].second && mouseY <= _vertices[2].second;
     }
 
     void Button::setListener(std::unique_ptr<Listener> listener)
@@ -51,6 +56,10 @@ namespace kondraLib
     void Button::setLabel(const std::string &label)
     {
         _label = label;
+        _labelWidth = _label.length() * 8;
+        _labelHeight = 13.f;
+        _labelX = _vertices[0].first + (_width - _labelWidth) / 2;
+        _labelY = _vertices[0].second + (_height + _labelHeight) / 3; // 3 - magic number, result of the selection
     }
 
     void Button::setColor(const Color &color)
@@ -76,12 +85,8 @@ namespace kondraLib
     void Button::draw() const
     {
         Rectangle::draw();
-
-        // Draw label text
-        // Set color to white
-        glColor4f(_labelColor.getColor().red, _labelColor.getColor().green, _labelColor.getColor().blue, 
-                _labelColor.getColor().alpha); 
-        glRasterPos2f(_x + (_width - _label.length() * 8) / 2, _y + _height / 2); // Calculate position for centering text
+        glColor4f(_labelColor.getColor().red, _labelColor.getColor().green, _labelColor.getColor().blue, _labelColor.getColor().alpha);
+        glRasterPos2f(_labelX, _labelY);
         for (char c : _label)
         {
             glutBitmapCharacter(GLUT_BITMAP_8_BY_13, c); // Render each character of the label
