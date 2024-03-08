@@ -21,7 +21,7 @@ namespace kondraLib
     public:
         Rectangle(const GLfloat &, const GLfloat &, const GLfloat &, const GLfloat &, const Color & = Color::BLACK);
         ~Rectangle() = default;
-        void draw() override;
+        void draw() const override;
     };
 
     Rectangle::Rectangle(const GLfloat &x, const GLfloat &y, const GLfloat &width,
@@ -34,7 +34,7 @@ namespace kondraLib
         _vertices[3] = {_x, _y + _height};
     }
 
-    void Rectangle::draw()
+    void Rectangle::draw() const
     {
         glColor4f(_color.getColor().red, _color.getColor().green, _color.getColor().blue, _color.getColor().alpha);
         glBegin(GL_QUADS);

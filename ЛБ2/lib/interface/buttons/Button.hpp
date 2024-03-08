@@ -20,14 +20,14 @@ namespace kondraLib
         Button(const GLfloat &, const GLfloat &, const GLfloat &, const GLfloat &);
         ~Button() = default;
         void click();
-        bool isMouseOver(const GLfloat &, const GLfloat &);
+        bool isMouseOver(const GLfloat &, const GLfloat &) const;
         void setListener(std::unique_ptr<Listener>);
         void setLabel(const std::string &);
         void setColor(const Color &);
         void setColor(const GLfloat &, const GLfloat &, const GLfloat &, const GLfloat & = 1.f);
         void setLabelColor(const Color &);
         void setLabelColor(const GLfloat &, const GLfloat &, const GLfloat &, const GLfloat & = 1.f);
-        void draw() override;
+        void draw() const override;
     };
 
     Button::Button(const GLfloat &x, const GLfloat &y, const GLfloat &width, const GLfloat &height) : 
@@ -38,7 +38,7 @@ namespace kondraLib
         _listener->onClick();
     }
 
-    bool Button::isMouseOver(const GLfloat &mouseX, const GLfloat &mouseY)
+    bool Button::isMouseOver(const GLfloat &mouseX, const GLfloat &mouseY) const
     {
         return mouseX >= _x && mouseX <= _x + _width && mouseY >= _y && mouseY <= _y + _height;
     }
@@ -73,7 +73,7 @@ namespace kondraLib
         _labelColor.setColor(r, g, b, a);
     }
 
-    void Button::draw()
+    void Button::draw() const
     {
         Rectangle::draw();
 

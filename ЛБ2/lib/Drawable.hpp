@@ -8,7 +8,7 @@ namespace kondraLib
     {
     public:
         virtual ~Drawable() = default;
-        virtual void draw() = 0;
+        virtual void draw() const = 0;
     };
 
 }
