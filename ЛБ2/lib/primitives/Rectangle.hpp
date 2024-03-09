@@ -8,7 +8,7 @@
 namespace kondraLib
 {
 
-    class Rectangle :public Drawable
+    class Rectangle : public Drawable
     {
     protected:
         GLfloat _x;
@@ -17,11 +17,16 @@ namespace kondraLib
         GLfloat _width;
         Color _color;
         std::array<std::pair<GLfloat, GLfloat>, 4> _vertices;
+        void calculateVertices(const GLfloat &, const GLfloat &);
 
     public:
         enum class BasePoints
         {
             Center,
+            NorthCenter,
+            SouthCenter,
+            WestCenter,
+            EastCenter,
             NorthWest,
             NorthEast,
             SouthWest, // default
@@ -38,10 +43,7 @@ namespace kondraLib
                         const GLfloat &height, const Color &color) : _x(x), _y(y), _height(height), 
                                                                     _width(width), _color(color) 
     {
-        _vertices[0] = {_x, _y};
-        _vertices[1] = {_x + _width, _y};
-        _vertices[2] = {_x + _width, _y + _height};
-        _vertices[3] = {_x, _y + _height};
+        calculateVertices(x, y);
     }
 
     void Rectangle::draw() const
@@ -62,12 +64,12 @@ namespace kondraLib
         switch (basePosition)
         {
         case BasePoints::Center:
-            offsetX = -_width / 2.0f;
-            offsetY = -_height / 2.0f;
+            offsetX = -_width / 2.f;
+            offsetY = -_height / 2.f;
             break;
 
         case BasePoints::NorthWest:
-            offsetX = 0.0f;
+            offsetX = 0.f;
             offsetY = -_height;
             break;
 
@@ -77,13 +79,33 @@ namespace kondraLib
             break;
 
         case BasePoints::SouthWest:
-            offsetX = 0.0f;
-            offsetY = 0.0f;
+            offsetX = 0.f;
+            offsetY = 0.f;
             break;
 
         case BasePoints::SouthEast:
             offsetX = -_width;
-            offsetY = 0.0f;
+            offsetY = 0.f;
+            break;
+
+        case BasePoints::NorthCenter:
+            offsetX = -_width / 2.f;
+            offsetY = -_height;
+            break;
+
+        case BasePoints::SouthCenter:
+            offsetX = -_width / 2.f;
+            offsetY = 0.f;
+            break;
+
+        case BasePoints::WestCenter:
+            offsetX = 0.f;
+            offsetY = -_height / 2.f;
+            break;
+
+        case BasePoints::EastCenter:
+            offsetX = -_width;
+            offsetY = -_height / 2.f;
             break;
         }
 
@@ -91,6 +113,11 @@ namespace kondraLib
         auto y = _y + offsetY;
 
         // Update the vertices
+        calculateVertices(x, y);
+    }
+
+    void Rectangle::calculateVertices(const GLfloat &x, const GLfloat &y)
+    {
         _vertices[0] = {x, y};
         _vertices[1] = {x + _width, y};
         _vertices[2] = {x + _width, y + _height};
