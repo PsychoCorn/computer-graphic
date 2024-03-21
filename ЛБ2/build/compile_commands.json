@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Ucheba/LB2/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe    -O3 -Ofast -g -std=gnu++23 -o CMakeFiles\\frog_game.dir\\main.cpp.obj -c C:\\Ucheba\\LB2\\main.cpp",
+  "file": "C:/Ucheba/LB2/main.cpp",
+  "output": "CMakeFiles/frog_game.dir/main.cpp.obj"
+}
+]
