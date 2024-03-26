@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\frog_game.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\frog_game.dir/objects.a @CMakeFiles\frog_game.dir\objects1.rsp
-C:\msys64\mingw64\bin\g++.exe  -O3 -Ofast -g -Wl,--whole-archive CMakeFiles\frog_game.dir/objects.a -Wl,--no-whole-archive -o frog_game.exe -Wl,--out-implib,libfrog_game.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\frog_game.dir\linkLibs.rsp
