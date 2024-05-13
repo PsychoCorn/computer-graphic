@@ -43,6 +43,10 @@ void key_down(WPARAM wParam)
     case VK_UP:
         character_jump(&game.map.charac);
         break;
+
+    case VK_ESCAPE:
+        interface_change_state(&game.interf, (game.interf._state == PAUSE) ? GAMEPLAY : PAUSE);
+        break;
     
     default:
         break;

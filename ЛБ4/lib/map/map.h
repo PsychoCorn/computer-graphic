@@ -162,7 +162,7 @@ void map_character_move(map_t *const self)
         self->charac.rect._vertices[2].x = new_char_pos.right;
         self->charac.rect._vertices[3].x = new_char_pos.left;
     }
-    if (((collision & 0b00000010) >> 1))
+    if (collision & 0b00000010)
     {
         self->charac.rect._vertices[0].y = new_char_pos.bottom;
         self->charac.rect._vertices[1].y = new_char_pos.bottom;
