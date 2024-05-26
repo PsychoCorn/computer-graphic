@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/cg/fewf/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe    -O3 -g -std=gnu++23 -o CMakeFiles\\camera.dir\\camera.cpp.obj -c C:\\cg\\fewf\\camera.cpp",
+  "file": "C:/cg/fewf/camera.cpp",
+  "output": "CMakeFiles/camera.dir/camera.cpp.obj"
+},
+{
+  "directory": "C:/cg/fewf/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe    -O3 -g -std=gnu++23 -o CMakeFiles\\lab.dir\\main.cpp.obj -c C:\\cg\\fewf\\main.cpp",
+  "file": "C:/cg/fewf/main.cpp",
+  "output": "CMakeFiles/lab.dir/main.cpp.obj"
+}
+]
