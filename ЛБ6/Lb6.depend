@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1714957627 source:c:\cg\computer-graphic\ка6\camera.cpp
+	<windows.h>
+	<gl/gl.h>
+	"camera.h"
+	<iostream>
+	<math.h>
+
+1714957567 c:\cg\computer-graphic\ка6\camera.h
+
+1716738900 source:c:\cg\computer-graphic\ка6\main.cpp
+	<cmath>
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<gl/gl.h>
+	<gl/glu.h>
+	"camera.h"
+

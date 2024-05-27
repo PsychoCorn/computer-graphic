@@ -1,2 +1,0 @@
-C:\msys64\mingw64\bin\ar.exe qc libcamera.a CMakeFiles/camera.dir/camera.cpp.obj
-C:\msys64\mingw64\bin\ranlib.exe libcamera.a

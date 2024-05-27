@@ -1,8 +1,0 @@
-[
-{
-  "directory": "C:/cg/Lb2/build",
-  "command": "C:\\msys64\\mingw64\\bin\\gcc.exe    -O3 -Ofast -Os -g -std=gnu2x -o CMakeFiles\\frog_game.dir\\main.c.obj -c C:\\cg\\Lb2\\main.c",
-  "file": "C:/cg/Lb2/main.c",
-  "output": "CMakeFiles/frog_game.dir/main.c.obj"
-}
-]

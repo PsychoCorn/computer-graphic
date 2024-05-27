@@ -1,4 +1,0 @@
-C:/cg/Lb5/build/CMakeFiles/camera.dir
-C:/cg/Lb5/build/CMakeFiles/lab.dir
-C:/cg/Lb5/build/CMakeFiles/edit_cache.dir
-C:/cg/Lb5/build/CMakeFiles/rebuild_cache.dir
