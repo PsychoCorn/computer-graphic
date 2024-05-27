@@ -20,7 +20,7 @@ void mouse(UINT uMsg, WPARAM wParam, LPARAM lParam)
     case WM_LBUTTONDOWN:
         interface_check_buttons(&game.interf, x, WIN_HEIGHT - y);
         break;
-    
+
     default:
         break;
     }
@@ -37,7 +37,7 @@ void key_down(WPARAM wParam)
     case VK_LEFT:
         character_walk_left(&game.charac);
         break;
-    
+
     default:
         break;
     }
@@ -54,7 +54,7 @@ void key_up(WPARAM wParam)
     case VK_LEFT:
         character_stop(&game.charac);
         break;
-    
+
     default:
         break;
     }
@@ -89,14 +89,14 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
     case WM_KEYDOWN:
         key_down(wParam);
         break;
-    
+
     case WM_KEYUP:
         key_up(wParam);
         break;
 
     default:
         return DefWindowProc(hwnd, message, wParam, lParam);
-        
+
     }
     return 0;
 }
@@ -112,7 +112,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     RegisterClass(&wc);
 
     hwnd = CreateWindowEx(0, "OpenGLWindow", WIN_TITLE, WS_OVERLAPPEDWINDOW | WS_VISIBLE,
-        CW_USEDEFAULT, CW_USEDEFAULT, WIN_WIDTH, WIN_HEIGHT + 39, 
+        CW_USEDEFAULT, CW_USEDEFAULT, WIN_WIDTH, WIN_HEIGHT + 39,
         NULL, NULL, GetModuleHandle(NULL), NULL);
         // 39 is a magic number) this is the size of the title bar that I got with GetClientRect function
     HDC hdc = GetDC(hwnd);
@@ -151,8 +151,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
     wglMakeCurrent(NULL, NULL);
     wglDeleteContext(hglrc);
-    
+
     ReleaseDC(hwnd, hdc);
-    
+
     return 0;
 }

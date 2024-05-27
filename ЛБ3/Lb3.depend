@@ -1,0 +1,155 @@
+# depslib dependency file v1.0
+1674029754 source:c:\cg\cg\lb3\stb-master\stb_vorbis.c
+	<stdio.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<math.h>
+	<malloc.h>
+	<alloca.h>
+	<limits.h>
+	<crtdbg.h>
+
+1716777612 source:c:\cg\cg\lb3\main.c
+	"lib/game.h"
+
+1714300565 c:\cg\cg\lb3\lib\game.h
+	"interface/interface.h"
+	"characters/character.h"
+
+1714302926 c:\cg\cg\lb3\lib\interface\interface.h
+	"collections/button_vector.h"
+	"../winsettings.h"
+
+1711260753 c:\cg\cg\lb3\lib\interface\collections\button_vector.h
+	"../button.h"
+
+1711254002 c:\cg\cg\lb3\lib\interface\button.h
+	"../primitives/textured_rectangle.h"
+	<string.h>
+
+1711259060 c:\cg\cg\lb3\lib\primitives\textured_rectangle.h
+	"rectangle.h"
+	"texture.h"
+
+1711253125 c:\cg\cg\lb3\lib\primitives\rectangle.h
+	"../color.h"
+	"point.h"
+
+1711252984 c:\cg\cg\lb3\lib\color.h
+	"includes.h"
+
+1716777333 c:\cg\cg\lb3\lib\includes.h
+	<Windows.h>
+	<gl/gl.h>
+	"../stb-master/stb_image.h"
+	<inttypes.h>
+	<stdbool.h>
+
+1674029753 c:\cg\cg\lb3\stb-master\stb_image.h
+	"stb_image.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<assert.h>
+	<stdint.h>
+	<emmintrin.h>
+	<intrin.h>
+	<arm_neon.h>
+
+1711253007 c:\cg\cg\lb3\lib\primitives\point.h
+	"../includes.h"
+
+1711259714 c:\cg\cg\lb3\lib\primitives\texture.h
+	"point.h"
+
+1716725377 c:\cg\cg\lb3\lib\winsettings.h
+	"includes.h"
+
+1714302959 c:\cg\cg\lb3\lib\characters\character.h
+	"../primitives/animation.h"
+	"../global_settings.h"
+
+1714300250 c:\cg\cg\lb3\lib\primitives\animation.h
+	"texture.h"
+
+1714302641 c:\cg\cg\lb3\lib\global_settings.h
+
+1716777612 source:c:\cg\computer-graphic\ка3\main.c
+	"lib/game.h"
+
+1714300565 c:\cg\computer-graphic\ка3\lib\game.h
+	"interface/interface.h"
+	"characters/character.h"
+
+1714302926 c:\cg\computer-graphic\ка3\lib\interface\interface.h
+	"collections/button_vector.h"
+	"../winsettings.h"
+
+1711260753 c:\cg\computer-graphic\ка3\lib\interface\collections\button_vector.h
+	"../button.h"
+
+1711254002 c:\cg\computer-graphic\ка3\lib\interface\button.h
+	"../primitives/textured_rectangle.h"
+	<string.h>
+
+1711259060 c:\cg\computer-graphic\ка3\lib\primitives\textured_rectangle.h
+	"rectangle.h"
+	"texture.h"
+
+1711253125 c:\cg\computer-graphic\ка3\lib\primitives\rectangle.h
+	"../color.h"
+	"point.h"
+
+1711252984 c:\cg\computer-graphic\ка3\lib\color.h
+	"includes.h"
+
+1716777333 c:\cg\computer-graphic\ка3\lib\includes.h
+	<Windows.h>
+	<gl/gl.h>
+	"../stb-master/stb_image.h"
+	<inttypes.h>
+	<stdbool.h>
+
+1674029753 c:\cg\computer-graphic\ка3\stb-master\stb_image.h
+	"stb_image.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<assert.h>
+	<stdint.h>
+	<emmintrin.h>
+	<intrin.h>
+	<arm_neon.h>
+
+1711253007 c:\cg\computer-graphic\ка3\lib\primitives\point.h
+	"../includes.h"
+
+1711259714 c:\cg\computer-graphic\ка3\lib\primitives\texture.h
+	"point.h"
+
+1716725377 c:\cg\computer-graphic\ка3\lib\winsettings.h
+	"includes.h"
+
+1714302959 c:\cg\computer-graphic\ка3\lib\characters\character.h
+	"../primitives/animation.h"
+	"../global_settings.h"
+
+1714300250 c:\cg\computer-graphic\ка3\lib\primitives\animation.h
+	"texture.h"
+
+1714302641 c:\cg\computer-graphic\ка3\lib\global_settings.h
+

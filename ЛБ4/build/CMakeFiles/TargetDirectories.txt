@@ -1,3 +1,0 @@
-C:/cg/Lb2/build/CMakeFiles/frog_game.dir
-C:/cg/Lb2/build/CMakeFiles/edit_cache.dir
-C:/cg/Lb2/build/CMakeFiles/rebuild_cache.dir

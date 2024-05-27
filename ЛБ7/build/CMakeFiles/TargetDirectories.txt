@@ -1,4 +1,0 @@
-C:/cg/fewf/build/CMakeFiles/camera.dir
-C:/cg/fewf/build/CMakeFiles/lab.dir
-C:/cg/fewf/build/CMakeFiles/edit_cache.dir
-C:/cg/fewf/build/CMakeFiles/rebuild_cache.dir
