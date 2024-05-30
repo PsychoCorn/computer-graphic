@@ -113,13 +113,20 @@ uint8_t check_intersection(character_t *const self, RECT new_char_pos, int32_t b
 
     bool h_col = (new_char_pos.right <= block.left || new_char_pos.left >= block.right) ||
                  (char_pos.top <= block.bottom || char_pos.bottom >= block.top);
-    bool v_col = new_char_pos.top <= block.bottom || new_char_pos.bottom >= block.top ||
+    bool vb_col = new_char_pos.bottom >= block.top ||
+                 (char_pos.right <= block.left || char_pos.left >= block.right);
+    bool vt_col = new_char_pos.top <= block.bottom ||
                  (char_pos.right <= block.left || char_pos.left >= block.right);
 
-    if (h_col)
-        collision |= 1;
-    if (v_col)
+    if (h_col) collision |= 1;
+    if (vb_col) {
         collision |= 2;
+    }
+    if (vt_col) {
+        collision |= 2;
+        self->speed.y = 0;
+    }
+
 
     return collision;
 }
@@ -154,7 +161,7 @@ void map_character_move(map_t *const self)
     new_char_pos.top = self->charac.rect._vertices[2].y + self->charac.speed.y - GRAVITY;
 
     uint8_t collision = collision_check(self, new_char_pos);
-    
+
     if (collision & 0b00000001)
     {
         self->charac.rect._vertices[0].x = new_char_pos.left;

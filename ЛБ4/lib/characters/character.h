@@ -5,14 +5,14 @@
 #include "../global_settings.h"
 #include "../primitives/rectangle.h"
 
-typedef enum 
+typedef enum
 {
     IDLE,
     WALKING,
     DEATH,
 } CharacterState;
 
-typedef struct 
+typedef struct
 {
     bool on_floor;
     animation_t animations[3];
@@ -70,9 +70,9 @@ void character_jump(character_t *const self)
 {
     if (self->on_floor)
     {
-        self->speed.y = 50;
+        self->speed.y = 70;
     }
-     
+
 }
 
 void character_stop(character_t *const self)
@@ -86,8 +86,8 @@ void character_move(character_t *const self)
 {
     for (int i = 0; i < 4; ++i)
     {
-        self->rect._vertices[i].x += self->speed.x; 
-        self->rect._vertices[i].y += self->speed.y /* - GRAVITY */; 
+        self->rect._vertices[i].x += self->speed.x;
+        self->rect._vertices[i].y += self->speed.y /* - GRAVITY */;
     }
 }
 
@@ -98,15 +98,15 @@ void character_draw(character_t *const self)
     case LEFT:
         animation_turn_left(self->animations + self->state);
         break;
-    
+
     case RIGHT:
         animation_turn_right(self->animations + self->state);
         break;
     }
-    
+
     glEnable(GL_TEXTURE_2D);
     glBindTexture(GL_TEXTURE_2D, self->animations[self->state].sprite_sheet.texture_id);
-    glColor4d(self->rect.color.red, self->rect.color.green, 
+    glColor4d(self->rect.color.red, self->rect.color.green,
               self->rect.color.blue, self->rect.color.alpha);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -124,14 +124,14 @@ void character_draw(character_t *const self)
     glDisable(GL_BLEND);
     if (self->on_floor)
     {
-        self->animations[self->state].frame_counter = 
-            self->animations[self->state].frame_counter >= self->animations[self->state].frame_number - 1 ? 
+        self->animations[self->state].frame_counter =
+            self->animations[self->state].frame_counter >= self->animations[self->state].frame_number - 1 ?
             0u : self->animations[self->state].frame_counter + 1;
     }
     else
     {
-        self->animations[self->state].frame_counter = 
-            self->animations[self->state].frame_counter >= self->animations[self->state].frame_number - 1 ? 
+        self->animations[self->state].frame_counter =
+            self->animations[self->state].frame_counter >= self->animations[self->state].frame_number - 1 ?
             0u : self->animations[self->state].frame_counter;
         if (self->speed.y > 0)
         {
