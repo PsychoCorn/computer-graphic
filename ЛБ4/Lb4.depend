@@ -140,7 +140,7 @@
 1714313291 c:\cg\computer-graphic\ка4\lib\winsettings.h
 	"includes.h"
 
-1714557679 c:\cg\computer-graphic\ка4\lib\characters\character.h
+1717075169 c:\cg\computer-graphic\ка4\lib\characters\character.h
 	"../primitives/animation.h"
 	"../global_settings.h"
 	"../primitives/rectangle.h"
@@ -148,9 +148,9 @@
 1714300250 c:\cg\computer-graphic\ка4\lib\primitives\animation.h
 	"texture.h"
 
-1715565856 c:\cg\computer-graphic\ка4\lib\global_settings.h
+1717075074 c:\cg\computer-graphic\ка4\lib\global_settings.h
 
-1715566689 c:\cg\computer-graphic\ка4\lib\map\map.h
+1717075057 c:\cg\computer-graphic\ка4\lib\map\map.h
 	"../characters/character.h"
 	"../winsettings.h"
 	"../global_settings.h"
